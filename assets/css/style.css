@@ -3,6 +3,19 @@
   padding: 15px;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1,
 h2,
 h3 {
@@ -31,7 +44,7 @@ p {
 }
 @media (min-width: 768px) {
   .container {
-    margin: 20px;
+    margin-top: 5%;
   }
 }
 
@@ -44,7 +57,7 @@ p {
 }
 
 .secondaryContent {
-  background-color: aquamarine;
+  background-color: rgb(19.8039215686%, 100%, 73.059129902%);
 }
 
 .sidebar {
