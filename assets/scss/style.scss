@@ -1,5 +1,29 @@
 @use 'colors' as colors;
 
+@mixin flex-display {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 1.2em;
+}
+
+@mixin border-box($measure, $radius, $color) {
+	border: $measure solid $color;
+	border-radius: $radius;
+	color: colors.$primary-color;
+}
+
+@mixin tablet-query {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+%box-model {
+	margin: 0 auto;
+	padding: 15px;
+}
+
 $border: 2px solid colors.$border-color;
 $primary-measure: 50%;
 
@@ -10,13 +34,37 @@ h3 {
 }
 
 p {
-	border: $border;
+	@include border-box(2px, 10px, blue);
+}
+
+.send {
+	@include border-box(1px, 5px, black);
 }
 
 .container {
 	color: colors.$secondary-color;
-	display: flex;
+	@include flex-display();
 	width: $primary-measure;
+
+	@include tablet-query {
+		margin: 20px;
+	}
+}
+
+.news {
+	color: colors.$secondary-color;
+	@include flex-display();
+}
+
+.secondaryContent {
+	@extend %box-model;
+	background-color: colors.$background-color;
+}
+
+.sidebar {
+    @extend %box-model;
+    width: 20%;
+    padding: 10px;
 }
 
 nav {
@@ -26,7 +74,11 @@ nav {
 	ul {
 		width: 50%;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-around;
+		@include tablet-query() {
+			flex-direction: row;
+		}
 		li {
 			list-style-type: none;
 			a {
