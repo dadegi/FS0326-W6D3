@@ -1,0 +1,40 @@
+@use 'colors' as colors;
+
+$border: 2px solid colors.$border-color;
+$primary-measure: 50%;
+
+h1,
+h2,
+h3 {
+	color: colors.$primary-color;
+}
+
+p {
+	border: $border;
+}
+
+.container {
+	color: colors.$secondary-color;
+	display: flex;
+	width: $primary-measure;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	background-color: colors.$background-color;
+	ul {
+		width: 50%;
+		display: flex;
+		justify-content: space-around;
+		li {
+			list-style-type: none;
+			a {
+				color: colors.$primary-color;
+				&:hover {
+					color: colors.$secondary-color;
+				}
+			}
+		}
+	}
+}
