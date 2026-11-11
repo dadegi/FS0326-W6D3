@@ -15,7 +15,7 @@ function clickExtract() {
 		return;
 	}
 	extract();
-	// IF PER L'IMBROGLIO
+	// -------------IF PER L'IMBROGLIO---------------
 	// if (extracted == 0) {
 	// 	print();
 	// 	verifyWin(join1, join2);
